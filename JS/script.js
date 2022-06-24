@@ -36,13 +36,19 @@
 const startGameBtn = document.getElementById('start-game-btn');
 const cellsWrapper = document.getElementById('cells-wrapper');
 
+
 startGameBtn.addEventListener("click", function(){
     startNewGame()
+    const bombsBox = [];
+    console.log(bombsBox);
+    for (let i = 0; i < 16; i++) {
+        const newBombGeneration = generateBomb(bombsBox, 1, 100);
+        bombsBox.push(newBombGeneration)
+    }
 })
 
 function startNewGame() {                 
     cellsWrapper.innerHTML = '';
-
     for (let i = 0; i < 100; i++) {
         let cellCreatedElement = document.createElement('div');
         cellCreatedElement.classList.add('cell', 'easy');
@@ -61,30 +67,22 @@ function startNewGame() {
 
 // * conoscendo il numero di iterazioni da fare e cioè 16, perché sono 16 i numeri randomici da 1 a 100 che devo generare
 // * posso fare un ciclo for che itera per 16 volte per poter generare questi numeri.
-// * creare array bombe in cui pushare i risultati usciti dalla fun
-// * Finché non trovi un numero che sta già dentro bombe continua a generare numeri
+// * creare array bombe in cui pushare i risultati usciti dalla funzione
+// * Finché non trovi un numero che sta già dentro bombsBox continua a generare numeri
 
-function generateBomb (numList, maxNum, minNum){
+
+function generateBomb (numList, minNum, maxNum){
     let newBomb;
     let numInList = false;
 
     while (numInList === false){
-        newBomb = Math.floor(Math.random() * (maxNum - minNum) + minNum);
-        if(numList.includes(newBomb)){
-            numInList === true;
+        newBomb = parseInt(Math.floor(Math.random() * (maxNum - minNum) + minNum));
+        if(!numList.includes(newBomb)){
+            numInList = true;
         }
     }
     return newBomb;
 }
-
-const bombsBox = []
-
-for (let i = 0; i < 16; i++ ){
-    const newBombGeneration = generateBomb(bombsBox, 100, 1);
-    bombsBox.push(newBombGeneration)
-
-}
-console.log(bombsBox);
 
 
 
