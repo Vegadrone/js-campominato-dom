@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #aaaaaa;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.clear-fix::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.screen-border{
+    background-color:  #8e8c91;
+    width: 1000px;
+    height: 850px;
+    margin: 0 auto;
+    border-radius: 15px 15px 150px 15px;
+    display: flex;
+    align-items: center;
+    box-shadow:0px 0px 5px 2px rgb(13, 14, 14);
+    position:relative;
+}
+
+.cells-container {
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #89a40f;
+}
+
+.cell {
+    float: left;
+    color: #306230;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: crosshair;
+}
+
+.easy {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.cells-container,
+.cell {
+    border: 2px solid #0f380f;
+}
+
+.active {
+    background-color: #306230;
+    color: #89a40f;
+}
+
+h1{
+    color: #3c3e86;
+}
+
+h2 {
+    color: rgba(226, 224, 224, 0.864);
+    position: absolute;
+    top: 30px;
+    right: 355px;
+}
+
+
+.logo-bool-boy {
+    display:flex;
+    align-items: center;
+}
+
+.logo-bool-boy h1{
+    position: absolute;
+    top: 28px;
+    left: 75px;
+    background-color: #8e8c91;
+    padding: 11px;
+    border-radius: 0px 20px 20px 0px;
+   
+}
+
+.logo-bool-boy img{
+    position: absolute;
+    top:28px;
+    left:15px;
+    background-color: #8c2f5c;
+    padding: 5px;
+    border-radius: 20px 0px 0px 20px;
+      
+}
+
+#start-game-btn{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #8c2f5c;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: absolute;
+    top:350px; 
+    left: 80px;
+}
+
+#start-game-btn:hover {
+    background-color: #73274c
+}
+
+#start-game-btn:active {
+    background-color: #73274c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#difficulty-level{
+    position: relative;
+    top: 550px;
+    left: 108px;
+    color: #0f380f;
+    padding: 15px 25px;
+    border: 3px solid #8e8c91;
+    background-color: #89a40f;
+    box-shadow: 0px 0px 5px 2px rgb(13, 14, 14);
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.header-content{
+    margin-top: -30px;
+}
