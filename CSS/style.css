@@ -152,3 +152,7 @@ h2 {
 .header-content{
     margin-top: -30px;
 }
+
+.d-none {
+    display: none;
+}
